@@ -1,9 +1,12 @@
 package com.delfino.workshopmongo.domain;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Objects;
 
 import com.delfino.workshopmongo.dto.AuthorDto;
+import com.delfino.workshopmongo.dto.CommentDto;
 
 public class Post {
 	
@@ -13,6 +16,9 @@ public class Post {
 	private String body;
 	private AuthorDto author;
 	
+	private List<CommentDto> comments = new ArrayList<>();
+	
+
 	public Post() {
 		
 	}
@@ -64,6 +70,15 @@ public class Post {
 
 	public void setAuthor(AuthorDto author) {
 		this.author = author;
+	}
+	
+	public List<CommentDto> getComments() {
+		return comments;
+	}
+
+
+	public void setComments(List<CommentDto> comments) {
+		this.comments = comments;
 	}
 
 	@Override
